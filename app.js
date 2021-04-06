@@ -13,7 +13,7 @@ require('dotenv').config()
 
 var corsOptions = {
     // origin: "http://localhost:3000"
-    origin: "https://6068a1d42e9aef0008ab805b--unruffled-nobel-405b00.netlify.app"
+    origin: "https://prem-todos-frontend.herokuapp.com"
 };
 
 let secrets, port;
