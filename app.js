@@ -11,10 +11,10 @@ const csurf = require("csurf");
 
 require('dotenv').config()
 
-var corsOptions = {
-    // origin: "http://localhost:3000"
-    origin: "https://prem-todos-frontend.herokuapp.com"
-};
+// var corsOptions = {
+//     // origin: "http://localhost:3000"
+//     origin: "https://prem-todos-frontend.herokuapp.com"
+// };
 
 let secrets, port;
 if (process.env.NODE_ENV == "production") {
@@ -30,8 +30,17 @@ if (process.env.NODE_ENV == "production") {
 
 // #Middleware
 // app.use(compression());
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
+
+app.use(function (req, res, next) {
+    //Enabling CORS
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+      next();
+});
 
 
 app.use((req, res, next) => {
