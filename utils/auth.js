@@ -200,7 +200,7 @@ router.get(
     async (req, res) => {
         // const baseUrl = req.protocol + "://" + req.get("host");
         // const baseUrl = req.protocol + "://localhost:3000";
-        const baseUrl = req.protocol + `://${CLIENT_URL}`;
+        // const baseUrl = req.protocol + `://${CLIENT_URL}`;
         try {
             await dbConnect();
             const user = await User.findById(req.userId);
@@ -224,8 +224,8 @@ router.get(
                     from: `PREM TODO <${res.locals.secrets.EMAIL_USERNAME}>`,
                     to: user.email,
                     subject: "Your Activation Link for YOUR APP",
-                    text: `Please use the following link within the next 10 minutes to activate your account on YOUR APP: ${baseUrl}/verify-account/${user._id}/${secretCode}`,
-                    html: `<p>Please use the following link within the next 10 minutes to activate your account on YOUR APP: <strong><a href="${baseUrl}/verify-account/${user._id}/${secretCode}" target="_blank">Activation Link</a></strong></p>`,
+                    text: `Please use the following link within the next 10 minutes to activate your account on YOUR APP: ${CLIENT_URL}/verify-account/${user._id}/${secretCode}`,
+                    html: `<p>Please use the following link within the next 10 minutes to activate your account on YOUR APP: <strong><a href="${CLIENT_URL}/verify-account/${user._id}/${secretCode}" target="_blank">Activation Link</a></strong></p>`,
                 };
                 await emailService.sendMail(data);
 
