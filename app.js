@@ -12,8 +12,8 @@ const csurf = require("csurf");
 require('dotenv').config()
 
 var corsOptions = {
-    // origin: "http://localhost:3000"
-    origin: ["https://prem-todos-frontend.herokuapp.com","https://todo-app-1cd84.web.app/","http://localhost:3000"]
+    origin: "https://todo-app-1cd84.web.app/"
+    // origin: ["https://prem-todos-frontend.herokuapp.com","https://todo-app-1cd84.web.app/","http://localhost:3000"]
 };
 
 let secrets, port;
