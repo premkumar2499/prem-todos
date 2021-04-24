@@ -271,19 +271,6 @@ router.get(
                         expiresIn: 60 * 60 * 24 * 14,
                     }
                 );
-
-
-                // let redirectPath;
-
-                // if (process.env.NODE_ENV == "production") {
-                //     redirectPath = `${req.protocol}://${req.get(
-                //         "host"
-                //     )}account/verified`;
-                // } else {
-                //     redirectPath = `http://127.0.0.1:5000/api/auth/verified`;
-                // }
-
-                // res.redirect(redirectPath);
                 res.json({
                     success:true,
                     token : token,
@@ -307,20 +294,6 @@ router.get(
         }
     }
 );
-
-router.get('/verified',async (req,res) =>{
-    const token = req.header("x-access-token");
-    logger.info(token);
-    const customers = [
-        {id: 1, firstName: 'John', lastName: 'Doe'},
-        {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-        {id: 3, firstName: 'Mary', lastName: 'Swanson'},
-      ];
-    // res.send({
-    //     msg:'account verified'
-    // })
-    res.json(customers)
-});
 
 router.post("/password-reset/get-code", async (req, res) => {
     const { email } = req.body;
