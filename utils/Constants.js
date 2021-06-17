@@ -3,4 +3,5 @@ module.exports = {
     passwordRegex : /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,}$/,
     // CLIENT_URL : `https://todo-app-1cd84.web.app`,
     CLIENT_URL : `https://prem-todos-frontend.herokuapp.com`,
+    // CLIENT_URL : `http://localhost:3000`,
 }
