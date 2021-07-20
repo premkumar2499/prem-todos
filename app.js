@@ -11,13 +11,13 @@ const csurf = require("csurf");
 
 require('dotenv').config()
 
-var corsOptions = {
-    // origin: "https://todo-app-1cd84.web.app"
-    // origin: "http://localhost:3000"
-    // origin: ["https://prem-todos-frontend.herokuapp.com","https://todo-app-1cd84.web.app/","http://localhost:3000"]
-    // origin: "https://prem-todos-frontend.herokuapp.com"
-    origin: "https://prem-todos-frontend.vercel.app"
-};
+// var corsOptions = {
+//     // origin: "https://todo-app-1cd84.web.app"
+//     // origin: "http://localhost:3000"
+//     // origin: ["https://prem-todos-frontend.herokuapp.com","https://todo-app-1cd84.web.app/","http://localhost:3000"]
+//     // origin: "https://prem-todos-frontend.herokuapp.com"
+//     origin: "https://prem-todos-frontend.vercel.app"
+// };
 
 let secrets, port;
 if (process.env.NODE_ENV == "production") {
@@ -34,7 +34,7 @@ if (process.env.NODE_ENV == "production") {
 // #Middleware
 // app.use(compression());
 // app.use(cors(corsOptions));
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.json());
 
 // app.use(function (req, res, next) {
